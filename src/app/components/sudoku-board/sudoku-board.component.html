@@ -4,9 +4,9 @@
             <div class="row" *ngFor="let i of [bi * 3 + 0, bi * 3 + 1, bi * 3 + 2]">
                 <div class="cell" [class.small]="!board[i][j]" *ngFor="let j of [bj * 3 + 0, bj * 3 + 1, bj * 3 + 2]">
                     <div *ngIf="board[i][j]">{{ board[i][j] }}</div>
-                    <div *ngIf="!board[i][j]">
-                        <div *ngFor="let row of [0, 1, 2]">
-                            <span [class.invisible]="!available[i][j].has(row * 3 + col)" *ngFor="let col of [1, 2, 3]">{{ row * 3 + col }}</span>
+                    <div class="inner-box" *ngIf="!board[i][j]">
+                        <div class="inner-row" *ngFor="let row of [0, 1, 2]">
+                            <span class="inner-cell" [class.invisible]="!available[i][j].has(row * 3 + col)" *ngFor="let col of [1, 2, 3]">{{ row * 3 + col }}</span>
                         </div>
                     </div>
                 </div>
@@ -15,4 +15,5 @@
     </div>
 </div>
 <br>
+<button type="button" (click)="loadSample()">Reset</button>
 <button type="button" (click)="stepSolve()">Step</button>

@@ -1,2 +1,3 @@
-# angular-sudoku
-Angular Sudoku Game
+# Angular Sudoku Game
+
+![angular-sudoku](angular-sudoku.png)

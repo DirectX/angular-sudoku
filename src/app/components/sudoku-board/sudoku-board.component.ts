@@ -25,7 +25,6 @@ export class SudokuBoardComponent implements OnInit {
 
   ngOnInit() {
     this.loadSample();
-    this.calcAvailabe();
   }
 
   loadSample() {
@@ -52,6 +51,8 @@ export class SudokuBoardComponent implements OnInit {
     //   [0, 0, 9, 0, 0, 0, 0, 0, 6],
     //   [0, 0, 0, 7, 3, 0, 0, 0, 0]
     // ]
+
+    this.calcAvailabe();
   }
 
   calcAvailabe() {
