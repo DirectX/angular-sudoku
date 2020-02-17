@@ -1,0 +1,18 @@
+<div class="board">
+    <div class="box-row" *ngFor="let bi of [0, 1, 2]">
+        <div class="box" *ngFor="let bj of [0, 1, 2]">
+            <div class="row" *ngFor="let i of [bi * 3 + 0, bi * 3 + 1, bi * 3 + 2]">
+                <div class="cell" [class.small]="!board[i][j]" *ngFor="let j of [bj * 3 + 0, bj * 3 + 1, bj * 3 + 2]">
+                    <div *ngIf="board[i][j]">{{ board[i][j] }}</div>
+                    <div *ngIf="!board[i][j]">
+                        <div *ngFor="let row of [0, 1, 2]">
+                            <span [class.invisible]="!available[i][j].has(row * 3 + col)" *ngFor="let col of [1, 2, 3]">{{ row * 3 + col }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<button type="button" (click)="stepSolve()">Step</button>
