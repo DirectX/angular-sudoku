@@ -124,5 +124,8 @@
         }
       }
     }},
-  "defaultProject": "angular-sudoku"
+  "defaultProject": "angular-sudoku",
+  "cli": {
+    "analytics": false
+  }
 }
